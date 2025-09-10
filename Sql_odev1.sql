@@ -4,11 +4,10 @@ title nvarchar(50) not null,
 author nvarchar(50) not null,
 genre nvarchar(50) ,
 price decimal(10,2) check(price>0),
-stock_qt int,
-published_year varchar(20),
+stock_qt int check(stock_qt>=0),
+published_year int check(published_year between 1900 and 2025),
 added_at date,
 )
-
 
 insert into books(title,author,genre,price,stock_qt,published_year,added_at)
 values('Kayýp Zamanýn Ýzninde','M. Proust','roman',129.90,25,1913,'2025-08-20'),
@@ -32,73 +31,63 @@ select*from books
 
 delete from books where book_id=1
 
----fiyatlarýnýn artan sýrada sýralma---
+---Sorgu 1---
 select title,author,price
 from books
 order by price asc
----fiyatlarý azalan sýrada sýralama---
-select title,author,price
-from books
-order by price desc
 
----titlelerine göre sýralama--
+--Sorgu 2--
 select title 
 from books
-where genre='roman'
+where genre=N'roman'
 order by title asc
 
 
-select title
-from books
-where genre='tarih'
-order by title asc
-
-
----between kukanýmý---
+---Sorgu 3---
 
 select title,price
 from books
 where price between 80 and 120
 
----stok adedi 20 den az olan kitaplar--
+---Sorgu 4--
 
 select title , stock_qt
 from books
 where stock_qt<20
 
----title içinde zaman gecenleri filtrele--
+---Sorgu 5--
 
 select title,author
 from books
 where lower(title) like '%zaman%' 
 
 
----IN kullanýmý---
+---Sorgu 6---
 
 select title,genre
 from books
 where genre IN('roman','bilim')
 
 
--------------
+---Sorgu 7---
 select title ,published_year
 from books
 where published_year>2000 
 order by published_year desc
 
------son 10 gün içiinde eklenen kitapla---
+----Sorgu 8---
 
 select  title ,added_at
 from books
 where added_at >=DATEADD(Day,-10,getdate())
 
------top kulanýmý----
+------Sorgu 9----
 
 select top 5 title ,price
 from books
 order by price desc
 
-----------
+----Sorgu 10----
 select title,stock_qt
 from books
 where stock_qt between 30 and 60
