@@ -13,7 +13,7 @@ added_at date,
 insert into books(title,author,genre,price,stock_qt,published_year,added_at)
 values('Kayýp Zamanýn Ýzninde','M. Proust','roman',129.90,25,1913,'2025-08-20'),
 ('Simyacý','P.Coelho','roman',89.50,40,1988,'2025-08-21'),
-('Sapiens','Y.N Harari','tarih',159.00,18,2011,'2025-08-25'),
+('Sapiens','Y.N Harari','tarih',159.00,18,2011,getdate()),
 ('Simyacý','P.Coelho','romqn',89.50,40,1988,'2025-08-21'),
 ('Ýnce Memed', 'Y. Kemal', 'roman', 99.90, 12, 1955, '2025-08-22'),
 ('Körlük', 'J. Saramago', 'roman', 119.00, 7, 1995, '2025-08-28'),
