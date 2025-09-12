@@ -1,4 +1,4 @@
-📘1. HAFTA SQL Dersinde İşlenen Konular
+SQL Dersinde İşlenen Konular
 
 Microsoft SQL Server indirimi ve kurulumu
 
@@ -41,5 +41,3 @@ WHERE ile koşul kullanma
 ORDER BY ile sıralama
 
 LIKE ile arama
-
-Basit filtreleme ve mantıksal operatörler (AND, OR, NOT)
