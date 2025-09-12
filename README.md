@@ -1,43 +1,46 @@
-SQL Dersinde İşlenen Konular
+1. HAFTA SQL Dersinde İşlenen Konular
 
-Microsoft SQL Server indirimi ve kurulumu
+- Microsoft SQL Server indirimi ve kurulumu
+  - SQL Server ve SQL Server Management Studio (SSMS) yükleme
+  - Veritabanı bağlantısı oluşturma
 
-SQL Server ve SQL Server Management Studio (SSMS) yükleme
+- CREATE işlemleri
+  - CREATE DATABASE -> Yeni veritabanı oluşturma
+  - CREATE TABLE -> Yeni tablo oluşturma
 
-Veritabanı bağlantısı oluşturma
+- Veri tipleri (Data Types)
+  - INT -> Tam sayılar
+  - BIGINT -> Büyük tam sayılar
+  - SMALLINT -> Küçük tam sayılar
+  - TINYINT -> 0-255 arası
+  - DECIMAL(p,s) / NUMERIC(p,s) -> Hassas ondalıklı sayılar
+  - FLOAT, REAL -> Yaklaşık ondalıklı sayılar
+  - CHAR(n) -> Sabit uzunluklu karakter dizisi
+  - VARCHAR(n) -> Değişken uzunluklu karakter dizisi
+  - TEXT, VARCHAR(MAX) -> Uzun metinler
+  - NCHAR(n), NVARCHAR(n), NTEXT -> Unicode metinler
+  - DATE -> Tarih (YYYY-MM-DD)
+  - DATETIME, DATETIME2 -> Tarih ve saat
+  - SMALLDATETIME -> Daha düşük hassasiyetli tarih/saat
+  - TIME -> Sadece saat bilgisi
+  - BIT -> 0 veya 1 (boolean benzeri)
+  - BINARY / VARBINARY -> İkili veriler
+  - UNIQUEIDENTIFIER -> GUID saklamak için
 
-CREATE işlemleri
+- Yeni tablo oluşturma
+  - Alan isimleri, veri tipleri ve kısıtlamalar (constraints) tanımlama
+  - PRIMARY KEY, NOT NULL, UNIQUE, DEFAULT, FOREIGN KEY kullanımı
 
-CREATE DATABASE → Yeni veritabanı oluşturma
+- Tabloya veri ekleme (INSERT INTO)
+  - Tek satır veri ekleme
+  - Birden fazla satır ekleme
+  - COLUMN listesiyle ekleme
 
-CREATE TABLE → Yeni tablo oluşturma
-
-Veri tipleri (Data Types)
-
-INT → Tam sayılar
-
-VARCHAR(n) → Karakter dizileri (metin)
-
-FLOAT, DATE, BIT gibi diğer veri tiplerine giriş
-
-Yeni tablo oluşturma
-
-Alan isimleri, veri tipleri ve kısıtlamalar (constraints) tanımlama
-
-PRIMARY KEY, NOT NULL kullanımına giriş
-
-Tabloya veri ekleme (INSERT INTO)
-
-Tek satır veri ekleme
-
-Birden fazla satır ekleme
-
-Sorgular (Queries)
-
-SELECT ile verileri listeleme
-
-WHERE ile koşul kullanma
-
-ORDER BY ile sıralama
-
-LIKE ile arama
+- Sorgular (Queries)
+  - SELECT ile verileri listeleme
+  - WHERE ile koşul kullanma
+  - ORDER BY ile sıralama
+  - LIKE ile arama
+  - GROUP BY, HAVING ile gruplayarak sorgulama
+  - JOIN (INNER, LEFT, RIGHT, FULL) ile tabloları birleştirme
+  - TOP / LIMIT (SQL Server'da TOP) ile sonuç sınırlama
