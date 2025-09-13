@@ -1,4 +1,5 @@
-1. HAFTA SQL Dersinde İşlenen Konular
+
+📌 1. Hafta Konuları (SQL)
 
 - Microsoft SQL Server indirimi ve kurulumu
   - SQL Server ve SQL Server Management Studio (SSMS) yükleme
@@ -36,11 +37,22 @@
   - Birden fazla satır ekleme
   - COLUMN listesiyle ekleme
 
-- Sorgular (Queries)
-  - SELECT ile verileri listeleme
-  - WHERE ile koşul kullanma
-  - ORDER BY ile sıralama
-  - LIKE ile arama
-  - GROUP BY, HAVING ile gruplayarak sorgulama
-  - JOIN (INNER, LEFT, RIGHT, FULL) ile tabloları birleştirme
-  - TOP / LIMIT (SQL Server'da TOP) ile sonuç sınırlama
+📌 2. Hafta Konuları (SQL)
+
+- SELECT işlemleri  
+- Filtreleme işlemleri (WHERE kullanımı)  
+- Karşılaştırma operatörleri (=, <>, >, <, >=, <=)  
+- Mantıksal operatörler (AND, OR, NOT)  
+- BETWEEN kullanımı  
+- LIKE kullanımı  
+- IN kullanımı  
+- UPDATE işlemi  
+- DELETE işlemi  
+- AVG, SUM, MIN, MAX, COUNT fonksiyonları  
+- AS (takma ad kullanımı)  
+- Aggregate (Toplama) fonksiyonları  
+- GROUP BY kullanımı  
+- DESC ve ASC ile sıralama  
+- HAVING koşulu  
+- CASE - WHEN - THEN - ELSE kullanımı  
+
