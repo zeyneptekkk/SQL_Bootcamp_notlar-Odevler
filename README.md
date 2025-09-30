@@ -58,3 +58,75 @@
 ● HAVING koşulu  
 
 ● CASE - WHEN - THEN - ELSE kullanımı  
+
+
+Online Alışveriş Platformu — Veri Tabanı Tasarımı-Bitirme Projesi
+1. Giriş
+
+Bu projenin amacı, bir online alışveriş platformunun temel işlevlerini destekleyecek ilişkisel veritabanı tasarımını gerçekleştirmektir. Proje kapsamında müşteri, sipariş, ürün, kategori ve satıcı bilgileri yönetilecek; sipariş süreçleri, stok takibi ve raporlama yapılabilecektir.
+
+2. Tasarım
+
+Tablolar: Müşteriler, Siparişler, SiparişDetayları, Ürünler, Kategoriler, Satıcılar.
+
+Normalizasyon: 3. Normal Form seviyesinde tutulmuştur. Veri tekrarları azaltılmış, bağımlılıklar minimuma indirilmiştir.
+
+Kritik İlişkiler:
+
+Bir müşteri birden fazla sipariş verebilir.
+
+Bir sipariş birden fazla ürün içerebilir.
+
+Bir ürün bir kategoride yer alır ve bir satıcıya aittir.
+
+ON DELETE / ON UPDATE:
+
+ON DELETE CASCADE: Müşteri silindiğinde ilgili siparişleri de sil.
+
+ON DELETE SET NULL: Satıcı silindiğinde ürünlerin satıcı alanı boş bırakılabilir.
+
+ON UPDATE CASCADE: Kimlik (ID) güncellemelerinde ilişkili tablolar otomatik güncellenir.
+
+3. Uygulama
+
+Veritabanı motoru: PostgreSQL (alternatif olarak MySQL kullanılabilir).
+
+Veri tipleri:
+
+Kimlik alanları → INT (AUTO INCREMENT / SERIAL)
+
+Metinsel alanlar → NVARCHAR
+
+Tarih alanları → DATE / DATETIME
+
+Fiyat ve tutar → DECIMAL(10,2)
+
+Örnek veri ekleme:
+
+INSERT INTO Musteriler (Ad, Soyad, Email) VALUES ('Ahmet', 'Yılmaz', 'ahmet@example.com');
+
+INSERT INTO Siparisler (MusteriID, ToplamTutar, OdemeTuru) VALUES (1, 500.00, 'Kredi Kartı');
+
+4. Raporlama Sorguları
+
+Aylara göre sipariş sayısı → Satışların dönemsel dağılımı ölçülür.
+
+Kategori bazlı toplam satışlar → Hangi kategorinin daha çok gelir getirdiği incelenir.
+
+Hiç satılmamış ürünler → Depoda bekleyen ürünleri tespit etmek için.
+
+Hiç sipariş vermemiş müşteriler → Platformda aktif olmayan kullanıcıları görmek için.
+
+En çok satılan ürünler → Trend ürünleri bulmak için.
+
+En yüksek ciroya sahip satıcılar → En çok kazandıran iş ortaklarını belirlemek için.
+
+5. Karşılaşılan Problemler
+
+Aynı e-posta adresiyle müşteri kaydı yapıldığında unique constraint hatası.
+
+Stok güncellemelerinde yanlış adet girilmesi nedeniyle negatif stok tutarsızlıkları.
+
+Çok sayıda sipariş ve ürün sorgusunda performans düşüklüğü → indeks ihtiyacı ortaya çıktı.
+
+DELETE işlemlerinde foreign key hataları (ör. sipariş silinince sipariş detaylarının da silinmesi gerekmesi).
